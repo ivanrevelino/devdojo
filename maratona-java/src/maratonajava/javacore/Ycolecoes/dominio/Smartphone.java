@@ -11,7 +11,7 @@ public class Smartphone {
 
     //Reflexivo: x.equasl(x) tem que ser true para tudo que for diferente de null
     //Simetrico: para x e y diferntes de null, se x.equals(y) == true logo, y.equals(x) == true
-    //Transitividade: para x,y e z diferentes de null, se x.equals(y) == true, e x.equals(z) == true logo, y.equals(z) == true
+    //Transitividade: para x, y e z diferentes de null, se x.equals(y) == true, e x.equals(z) == true logo, y.equals(z) == true
     //Consistente
     @Override
     public boolean equals(Object obj) {
