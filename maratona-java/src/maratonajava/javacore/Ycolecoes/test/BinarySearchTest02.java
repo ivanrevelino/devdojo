@@ -4,41 +4,23 @@ import maratonajava.javacore.Ycolecoes.dominio.Manga;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-class MangaByIdComparator implements Comparator<Manga> {
-
-    @Override
-    public int compare(Manga manga1, Manga manga2) {
-        return manga1.getId().compareTo(manga2.getId());
-    }
-}
-
-public class MangaSortTest01 {
+public class BinarySearchTest02 {
     static void main(String[] args) {
         List<Manga> mangas = new ArrayList<>();
         mangas.add(new Manga(4L,"Jujutsu Kaisen", 19.9));
         mangas.add(new Manga(1L,"Pokemon", 9.5));
         mangas.add(new Manga(3L,"Dragon Ball Z", 3.2));
         mangas.add(new Manga(2L,"Attack On Titan", 11.20));
-
+//        Collections.sort(mangas);
+        mangas.sort(new MangaByIdComparator());
         for (Manga manga : mangas) {
             System.out.println(manga);
         }
 
-        Collections.sort(mangas);
+        Manga mangaToSearch = new Manga(3L,"Dragon Ball Z", 3.2);
+        System.out.println(Collections.binarySearch(mangas, mangaToSearch, new MangaByIdComparator()));
 
-        System.out.println(" ");
-        for (Manga manga : mangas) {
-            System.out.println(manga);
-        }
-
-        Collections.sort(mangas, new MangaByIdComparator());
-
-        System.out.println(" ");
-        for (Manga manga : mangas) {
-            System.out.println(manga);
-        }
     }
 }
