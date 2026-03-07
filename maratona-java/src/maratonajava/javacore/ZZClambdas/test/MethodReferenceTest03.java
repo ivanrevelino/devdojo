@@ -1,0 +1,23 @@
+package maratonajava.javacore.ZZClambdas.test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BiPredicate;
+import java.util.function.Function;
+
+public class MethodReferenceTest03 {
+
+    public static void main(String[] args) {
+
+        List<String> stringList = new ArrayList<>(List.of("Rimuru", "Veldora", "Hikimaru"));
+        stringList.sort(String::compareTo);
+        System.out.println(stringList);
+
+        Function<String, Integer> stringToInteger = Integer::parseInt;
+        Integer apply = stringToInteger.apply("10");
+        System.out.println(apply + 1);
+
+        BiPredicate<List<String>, String> checkName = List::contains;
+        System.out.println(checkName.test(stringList, "Rimuru"));
+    }
+}
