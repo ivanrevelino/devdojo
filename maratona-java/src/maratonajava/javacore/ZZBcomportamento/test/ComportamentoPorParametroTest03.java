@@ -11,7 +11,9 @@ public class ComportamentoPorParametroTest03 {
 
     public static void main(String[] args) {
 
-        List<Car> greenCars = filter(cars, car -> car.getColor().equals("green"));
+        Predicate<Car> filterGreenCars = car -> car.getColor().equals("green");
+
+        List<Car> greenCars = filter(cars, filterGreenCars);
         List<Car> redCars = filter(cars, car -> car.getColor().equals("red"));
 
         System.out.println(greenCars);

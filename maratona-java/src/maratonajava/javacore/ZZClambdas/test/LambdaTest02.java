@@ -13,7 +13,9 @@ public class LambdaTest02 {
         System.out.println(map);
     }
 
-    private static  <T, R> List <R> map(List <T> list, Function<T, R> function) {
+     //<T, R> vai receber <T> e vai retornar algo <R>
+
+    private static <T, R> List<R> map(List<T> list, Function<T, R> function) {
         List<R> result = new ArrayList<>();
         for (T e : list) {
             R r = function.apply(e);
